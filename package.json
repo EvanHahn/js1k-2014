@@ -1,0 +1,14 @@
+{
+  "name": "js1k-2014",
+  "author": "Evan Hahn",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "start": "coffee server/app.coffee"
+  },
+  "dependencies": {
+    "express": "3.4.x",
+    "uglify-js": "2.4.x",
+    "ejs": "0.8.x"
+  }
+}
