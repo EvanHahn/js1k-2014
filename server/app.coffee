@@ -26,6 +26,7 @@ app.get '/prod', (req, res) ->
     minified = uglify.minify contents, { fromString: yes }
     code = minified.code
     res.render 'shim', { code }
+    console.log code.length + ' characters'
 
 app.all '*', (req, res) ->
   res.set 'Content-Type', 'text/plain'
