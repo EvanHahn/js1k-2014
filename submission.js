@@ -1,1 +1,1 @@
-console.log('wow');
+// jshint ignore: start
