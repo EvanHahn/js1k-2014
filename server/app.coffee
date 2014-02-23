@@ -1,5 +1,6 @@
 express = require 'express'
 uglify = require 'uglify-js'
+crush = require 'jscrush'
 fs = require 'fs'
 path = require 'path'
 
@@ -24,7 +25,7 @@ app.get '/dev', (req, res) ->
 app.get '/prod', (req, res) ->
   getCode (contents) ->
     minified = uglify.minify contents, { fromString: yes }
-    code = minified.code
+    code = crush minified.code
     res.render 'shim', { code }
     console.log code.length + ' characters'
 
