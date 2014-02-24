@@ -1,14 +1,31 @@
 // jshint ignore: start
 
+P = (M = Math).PI; // M = Math, P = PI
+
 S = 64; // how big is the dragon?
-W = a.width / 2;
-H = a.height / 2;
+
+w = (W = a.width) / 2;
+h = (H = a.height) / 2;
+
+l = 0.1; // wing curl amount
 
 (function t() {
 
-	c.beginPath();
-	c.arc(W, H, 64, 0, 7);
-	c.fill();
+	with (c) {
+
+		clearRect(0, 0, W, H);
+
+		c.fillStyle = '#090';
+
+		beginPath();
+		moveTo(w, h);
+		quadraticCurveTo(w - S, h + S, w - S * 2, h - S);
+		arc(w, h - S, S, P * (1 - l), P * l, true);
+		lineTo(w + S * 2, h - S);
+		quadraticCurveTo(w + S, h + S, w, h);
+		fill();
+
+	}
 
 	requestAnimationFrame(t);
 
