@@ -24,10 +24,15 @@ app.get '/dev', (req, res) ->
 
 app.get '/prod', (req, res) ->
   getCode (contents) ->
-    minified = uglify.minify contents, { fromString: yes }
-    code = crush minified.code
+    try
+      minified = uglify.minify contents, { fromString: yes }
+      code = crush minified.code
+      if minified.code.length < code.length
+        code = minified.code
+      console.log code.length + ' characters'
+    catch
+      code = "console.error('Error minifying code.');\n#{contents}"
     res.render 'shim', { code }
-    console.log code.length + ' characters'
 
 app.all '*', (req, res) ->
   res.set 'Content-Type', 'text/plain'
