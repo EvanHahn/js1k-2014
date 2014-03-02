@@ -11,7 +11,9 @@ a = new AudioContext;
 d(); // remove canvas
 
 function P(f, n, g, o) { // play a note with frequency
+
 	n = a.currentTime;
+
 	g = a.createGain();
 	with (g) {
 		with (gain) {
@@ -21,6 +23,7 @@ function P(f, n, g, o) { // play a note with frequency
 		}
 		connect(a.destination);
 	}
+
 	o = a.createOscillator();
 	o.frequency.value = f;
 	o.connect(g);
@@ -31,10 +34,12 @@ function P(f, n, g, o) { // play a note with frequency
 		o.start(n);
 		o.stop(n + 1);
 	}
+
 	setTimeout(function() {
 		o.disconnect(g);
 		g.disconnect(a.destination);
 	}, 1e3);
+
 }
 
 n = [
