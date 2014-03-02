@@ -35,8 +35,13 @@ function P(f, n, g, o) { // play a note with frequency
 		type = 0;
 		frequency.value = f;
 		connect(g);
-		noteOn(n);
-		noteOff(n + 1);
+	}
+	if (o.noteOn) {
+		o.noteOn(n);
+		o.noteOff(n + 1);
+	} else {
+		o.start(n);
+		o.stop(n + 1);
 	}
 	setTimeout(function() {
 		o.disconnect(g);
