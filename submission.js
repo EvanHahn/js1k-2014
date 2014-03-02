@@ -40,7 +40,6 @@ function P(f, n, g, o) { // play a note with frequency
 
 c = 'background';
 l = 'table';
-y = 'style';
 
 f = '#fff';
 o = '#000';
@@ -74,7 +73,7 @@ for (i = 8; i --;) {
 		(t = d.createElement('td')).f = n[i];
 		t.width = t.height = 64;
 		t.o = Math.random() < .2;
-		t[y].transition = 'background-color .2s ease';
+		t.style.transition = 'background-color .2s ease';
 
 		// toggle background and status on click
 		t.onclick = function() {
@@ -94,18 +93,18 @@ for (i = 8; i --;) {
 // -- styles --
 
 i = '100%';
-with (d.documentElement[y]) {
+with (d.documentElement.style) {
 	display = l;
 	width = height = i;
 	background = '#222';
 }
-with (b[y]) {
+with (b.style) {
 	display = l + '-cell';
 	width = height = i;
 	verticalAlign = 'middle';
 	fontFamily = 'sans-serif';
 }
-with (p[y]) {
+with (p.style) {
 	margin = '0 auto';
 	cursor = 'pointer';
 	background = f;
@@ -126,15 +125,15 @@ setInterval(function() {
 			if (j == b) { // it's the current beat for this one
 				if (t.o) {
 					P(t.f);
-					t[y][c] = '#3b3';
+					t.style[c] = '#3b3';
 				} else {
-					t[y][c] = '#020';
+					t.style[c] = '#020';
 				}
 			} else {
 				if (t.o) {
-					t[y][c] = f;
+					t.style[c] = f;
 				} else {
-					t[y][c] = o;
+					t.style[c] = o;
 				}
 			}
 
