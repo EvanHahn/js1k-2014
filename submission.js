@@ -23,11 +23,8 @@ function P(f, n, g, o) { // play a note with frequency
 		connect(a.destination);
 	}
 	o = a.createOscillator();
-	with (o) {
-		type = 0;
-		frequency.value = f;
-		connect(g);
-	}
+	o.frequency.value = f;
+	o.connect(g);
 	if (o.noteOn) {
 		o.noteOn(n);
 		o.noteOff(n + 1);
