@@ -37,8 +37,6 @@ function P(f, n, g, o) { // play a note with frequency
 	}, 1e3);
 }
 
-c = 'background';
-
 f = '#fff';
 o = '#000';
 
@@ -123,15 +121,15 @@ setInterval(function() {
 			if (j == b) { // it's the current beat for this one
 				if (t.o) {
 					P(t.f);
-					t.style[c] = '#3b3';
+					t.style.background = '#3b3';
 				} else {
-					t.style[c] = '#020';
+					t.style.background = '#020';
 				}
 			} else {
 				if (t.o) {
-					t.style[c] = f;
+					t.style.background = f;
 				} else {
-					t.style[c] = o;
+					t.style.background = o;
 				}
 			}
 
