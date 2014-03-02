@@ -9,7 +9,6 @@
 a = new AudioContext;
 
 d(); // remove canvas
-d = document;
 
 function P(f, n, g, o) { // play a note with frequency
 	n = a.currentTime;
@@ -58,18 +57,18 @@ r = [];
 
 // -- add the elements to the DOM --
 
-(T = d.createElement('table')).id = 'p'; // <table id="p">
+(T = document.createElement('table')).id = 'p'; // <table id="p">
 b.appendChild(T); // add table to body
 for (i = 8; i --;) {
 
 	k = [];
 
-	T = d.createElement('tr');
+	T = document.createElement('tr');
 
 	for (j = 8; j --;) {
 
 		// make a <td>
-		(t = d.createElement('td')).f = n[i];
+		(t = document.createElement('td')).f = n[i];
 		t.width = t.height = 64;
 		t.o = Math.random() < .2;
 		t.style.transition = 'background-color .2s ease';
@@ -92,7 +91,7 @@ for (i = 8; i --;) {
 // -- styles --
 
 i = '100%';
-with (d.documentElement.style) {
+with (document.documentElement.style) {
 	display = 'table';
 	width = height = i;
 	background = '#222';
