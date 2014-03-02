@@ -39,7 +39,6 @@ function P(f, n, g, o) { // play a note with frequency
 }
 
 c = 'background';
-l = 'table';
 
 f = '#fff';
 o = '#000';
@@ -59,7 +58,7 @@ r = [];
 
 // -- add the elements to the DOM --
 
-(T = d.createElement(l)).id = 'p'; // <table id="p">
+(T = d.createElement('table')).id = 'p'; // <table id="p">
 b.appendChild(T); // add table to body
 for (i = 8; i --;) {
 
@@ -94,12 +93,12 @@ for (i = 8; i --;) {
 
 i = '100%';
 with (d.documentElement.style) {
-	display = l;
+	display = 'table';
 	width = height = i;
 	background = '#222';
 }
 with (b.style) {
-	display = l + '-cell';
+	display = 'table-cell';
 	width = height = i;
 	verticalAlign = 'middle';
 	fontFamily = 'sans-serif';
