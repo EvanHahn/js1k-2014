@@ -84,7 +84,7 @@ for (i = 8; i --;) {
 		(t = C('td')).f = n[i];
 		t.width = t.height = 64;
 		t.o = Math.random() > .2;
-		t[y].transition = 'background-color .1s ease';
+		t[y].transition = 'background-color .2s ease';
 
 		// toggle background and status on click
 		(t.onclick = function() {
@@ -139,9 +139,9 @@ setInterval(function() {
 			if (j == b) { // it's the current beat for this one
 				if (t.o) {
 					P(t.f);
-					t[y][k] = '#f34';
+					t[y][k] = '#3b3';
 				} else {
-					t[y][k] = '#200';
+					t[y][k] = '#020';
 				}
 			} else {
 				if (t.o) {
