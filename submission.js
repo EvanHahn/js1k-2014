@@ -11,14 +11,6 @@ a = new AudioContext;
 d(); // remove canvas
 d = document;
 
-HTMLElement.prototype.A = function(element) {
-	this.appendChild(element);
-};
-
-function C(tagName) {
-	return d.createElement(tagName);
-}
-
 function P(f, n, g, o) { // play a note with frequency
 	n = a.currentTime;
 	g = a.createGain();
@@ -71,18 +63,18 @@ r = [];
 
 // -- add the elements to the DOM --
 
-(T = C(l)).id = 'p'; // <table id="p">
-b.A(T); // add table to body
+(T = d.createElement(l)).id = 'p'; // <table id="p">
+b.appendChild(T); // add table to body
 for (i = 8; i --;) {
 
 	k = [];
 
-	T = C('tr');
+	T = d.createElement('tr');
 
 	for (j = 8; j --;) {
 
 		// make a <td>
-		(t = C('td')).f = n[i];
+		(t = d.createElement('td')).f = n[i];
 		t.width = t.height = 64;
 		t.o = Math.random() < .2;
 		t[y].transition = 'background-color .2s ease';
@@ -92,12 +84,12 @@ for (i = 8; i --;) {
 			this.o = !this.o;
 		}
 
-		T.A(t); // add column to row
+		T.appendChild(t); // add column to row
 		k.push(t);
 
 	}
 
-	p.A(T); // add row to table
+	p.appendChild(T); // add row to table
 	r.push(k);
 
 }
