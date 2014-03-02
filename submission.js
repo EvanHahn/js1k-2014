@@ -49,6 +49,7 @@ function P(f, n, g, o) { // play a note with frequency
 	}, 1e3);
 }
 
+c = 'background';
 l = 'table';
 y = 'style';
 
@@ -83,16 +84,13 @@ for (i = 8; i --;) {
 		// make a <td>
 		(t = C('td')).f = n[i];
 		t.width = t.height = 64;
-		t.o = Math.random() > .2;
+		t.o = Math.random() < .2;
 		t[y].transition = 'background-color .2s ease';
 
 		// toggle background and status on click
-		(t.onclick = function() {
-			with (this) {
-				o = !o;
-				className = o ? 'o' : '';
-			}
-		}).call(t);
+		t.onclick = function() {
+			this.o = !this.o;
+		}
 
 		T.A(t); // add column to row
 		k.push(t);
@@ -120,13 +118,13 @@ with (b[y]) {
 }
 with (p[y]) {
 	margin = '0 auto';
+	cursor = 'pointer';
 	background = f;
 }
 
 // -- play that funky music --
 
 b = -1;
-k = 'background';
 setInterval(function() {
 
 	b = (b + 1) % 8;
@@ -139,15 +137,15 @@ setInterval(function() {
 			if (j == b) { // it's the current beat for this one
 				if (t.o) {
 					P(t.f);
-					t[y][k] = '#3b3';
+					t[y][c] = '#3b3';
 				} else {
-					t[y][k] = '#020';
+					t[y][c] = '#020';
 				}
 			} else {
 				if (t.o) {
-					t[y][k] = f;
+					t[y][c] = f;
 				} else {
-					t[y][k] = o;
+					t[y][c] = o;
 				}
 			}
 
