@@ -46,7 +46,7 @@ function P(f, n, g, o) { // play a note with frequency
 	setTimeout(function() {
 		o.disconnect(g);
 		g.disconnect(a.destination);
-	}, 1000);
+	}, 1e3);
 }
 
 l = 'table';
@@ -121,7 +121,6 @@ with (b[y]) {
 with (p[y]) {
 	margin = '0 auto';
 	background = f;
-	boxShadow = '0 0 20px' + f + ',0 0 10px' + o;
 }
 
 // -- play that funky music --
