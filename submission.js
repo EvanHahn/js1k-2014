@@ -37,9 +37,6 @@ function P(f, n, g, o) { // play a note with frequency
 	}, 1e3);
 }
 
-f = '#fff';
-o = '#000';
-
 n = [
 	123.47,
 	196,
@@ -103,7 +100,7 @@ with (b.style) {
 with (p.style) {
 	margin = '0 auto';
 	cursor = 'pointer';
-	background = f;
+	background = '#fff';
 }
 
 // -- play that funky music --
@@ -127,9 +124,9 @@ setInterval(function() {
 				}
 			} else {
 				if (t.o) {
-					t.style.background = f;
+					t.style.background = '#fff';
 				} else {
-					t.style.background = o;
+					t.style.background = '#000';
 				}
 			}
 
