@@ -52,8 +52,8 @@ function P(f, n, g, o) { // play a note with frequency
 l = 'table';
 y = 'style';
 
-ff = '#fff';
-oo = '#000';
+f = '#fff';
+o = '#000';
 
 n = [
 	123.47,
@@ -120,8 +120,8 @@ with (b[y]) {
 }
 with (p[y]) {
 	margin = '0 auto';
-	background = ff;
-	boxShadow = '0 0 20px' + ff + ',0 0 10px' + oo;
+	background = f;
+	boxShadow = '0 0 20px' + f + ',0 0 10px' + o;
 }
 
 // -- play that funky music --
@@ -146,9 +146,9 @@ setInterval(function() {
 				}
 			} else {
 				if (t.o) {
-					t[y][k] = ff;
+					t[y][k] = f;
 				} else {
-					t[y][k] = oo;
+					t[y][k] = o;
 				}
 			}
 
