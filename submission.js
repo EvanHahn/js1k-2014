@@ -56,7 +56,8 @@ r = [];
 
 // -- add the elements to the DOM --
 
-(T = document.createElement('table')).id = 'p'; // <table id="p">
+T = document.createElement('table');
+T.id = 'p';
 b.appendChild(T); // add table to body
 for (i = 8; i --;) {
 
