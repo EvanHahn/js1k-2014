@@ -85,6 +85,10 @@ for (i = 8; i --;) {
 
 }
 
+w = document.createElement('button');
+w.innerText = 'new song';
+b.appendChild(w);
+
 // -- styles --
 
 with (document.documentElement.style) {
@@ -105,17 +109,20 @@ with (p.style) {
 	cursor = 'pointer';
 	background = '#fff';
 }
+with (w.style) {
+	font = 'inherit';
+}
 
 // -- play that funky music --
 
-b = 7;
+u = 7;
 setInterval(function() {
 
-	b = (++b) % 8;
+	u = (++u) % 8;
 
 	for (i = 64; i --;) {
 
-		if ((i % 8) == b) { // it's the current beat for this one
+		if ((i % 8) == u) { // it's the current beat for this one
 			if (r[i].o) {
 				P(r[i].f);
 				r[i].style.background = '#3b3';
@@ -136,7 +143,7 @@ setInterval(function() {
 
 // -- reset stuff --
 
-(function R() {
+(w.onclick = function() {
 	for (i = 64; i --;) {
 		r[i].o = Math.random() < .3;
 	}
