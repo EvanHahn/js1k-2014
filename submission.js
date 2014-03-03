@@ -69,7 +69,6 @@ for (i = 8; i --;) {
 		t = document.createElement('td');
 		t.f = n[i];
 		t.width = t.height = 64;
-		t.o = Math.random() < .2;
 		t.style.transition = 'background-color .2s ease';
 
 		// toggle background and status on click
@@ -136,3 +135,17 @@ setInterval(function() {
 	}
 
 }, 500);
+
+// -- parse location.hash --
+
+if (location.hash.length < 2) {
+	for (i = 64; i --;) {
+		location.hash += (Math.random() > .2) ? 0 : 1;
+	}
+}
+
+for (i in location.hash) {
+	if (r[i - 1]) {
+		r[i - 1].o = parseInt(location.hash[i]);
+	}
+}
