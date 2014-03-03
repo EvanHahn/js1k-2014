@@ -112,7 +112,7 @@ with (p.style) {
 b = 7;
 setInterval(function() {
 
-	b = (b + 1) % 8;
+	b = (++b) % 8;
 
 	for (i = 64; i --;) {
 
