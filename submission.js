@@ -76,7 +76,7 @@ for (i = 8; i --;) {
 		// toggle background and status on click
 		t.onclick = function() {
 			this.o = !this.o;
-		}
+		};
 
 		T.appendChild(t); // add column to row
 		k.push(t);
