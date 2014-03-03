@@ -56,11 +56,6 @@ r = [];
 
 // -- add the elements to the DOM --
 
-(T = document.createElement('h3')).innerHTML = 'dragon scales';
-T.style.color = '#f34';
-b.appendChild(T);
-b.innerHTML += 'click to toggle note';
-
 (T = document.createElement('table')).id = 'p'; // <table id="p">
 b.appendChild(T); // add table to body
 for (i = 8; i --;) {
