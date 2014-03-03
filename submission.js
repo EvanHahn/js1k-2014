@@ -10,15 +10,15 @@ a = new AudioContext;
 
 d(); // remove canvas
 
-function P(f, n, g, o) { // play a note with frequency
+function P(f) { // play a note with frequency
 
-	n = a.currentTime;
+	t = a.currentTime;
 
 	g = a.createGain();
 	with (g) {
 		with (gain) {
-			setValueAtTime(1, n);
-			linearRampToValueAtTime(0, n + 1);
+			setValueAtTime(1, t);
+			linearRampToValueAtTime(0, t + 1);
 		}
 		connect(a.destination);
 	}
@@ -27,11 +27,11 @@ function P(f, n, g, o) { // play a note with frequency
 	o.frequency.value = f;
 	o.connect(g);
 	if (o.noteOn) {
-		o.noteOn(n);
-		o.noteOff(n + 1);
+		o.noteOn(t);
+		o.noteOff(t + 1);
 	} else {
-		o.start(n);
-		o.stop(n + 1);
+		o.start(t);
+		o.stop(t + 1);
 	}
 
 	setTimeout(function() {
@@ -84,8 +84,6 @@ for (i = 8; i --;) {
 	p.appendChild(T); // add row to table
 
 }
-
-// b.innerHTML += '<button onclick="R()">new song</button>';
 
 // -- styles --
 
