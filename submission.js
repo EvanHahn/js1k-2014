@@ -111,6 +111,7 @@ with (p.style) {
 }
 with (w.style) {
 	font = 'inherit';
+	padding = '.5em 1em';
 }
 
 // -- play that funky music --
