@@ -61,8 +61,6 @@ T.id = 'p';
 b.appendChild(T); // add table to body
 for (i = 8; i --;) {
 
-	k = [];
-
 	T = document.createElement('tr');
 
 	for (j = 8; j --;) {
@@ -80,12 +78,11 @@ for (i = 8; i --;) {
 		};
 
 		T.appendChild(t); // add column to row
-		k.push(t);
+		r.push(t);
 
 	}
 
 	p.appendChild(T); // add row to table
-	r.push(k);
 
 }
 
@@ -117,27 +114,25 @@ setInterval(function() {
 
 	b = (b + 1) % 8;
 
-	for (i = 8; i --;) {
-		for (j = 8; j --;) {
+	for (i = 64; i --;) {
 
-			t = r[i][j];
+		t = r[i];
 
-			if (j == b) { // it's the current beat for this one
-				if (t.o) {
-					P(t.f);
-					t.style.background = '#3b3';
-				} else {
-					t.style.background = '#020';
-				}
+		if ((i % 8) == b) { // it's the current beat for this one
+			if (t.o) {
+				P(t.f);
+				t.style.background = '#3b3';
 			} else {
-				if (t.o) {
-					t.style.background = '#fff';
-				} else {
-					t.style.background = '#000';
-				}
+				t.style.background = '#020';
 			}
-
+		} else {
+			if (t.o) {
+				t.style.background = '#fff';
+			} else {
+				t.style.background = '#000';
+			}
 		}
+
 	}
 
 }, 500);
