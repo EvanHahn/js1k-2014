@@ -112,7 +112,7 @@ with (p.style) {
 
 // -- play that funky music --
 
-b = -1;
+b = 7;
 setInterval(function() {
 
 	b = (b + 1) % 8;
