@@ -18,7 +18,6 @@ function P(f, n, g, o) { // play a note with frequency
 	with (g) {
 		with (gain) {
 			setValueAtTime(1, n);
-			linearRampToValueAtTime(1, n);
 			linearRampToValueAtTime(0, n + 1);
 		}
 		connect(a.destination);
