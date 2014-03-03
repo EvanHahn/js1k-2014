@@ -91,15 +91,14 @@ for (i = 8; i --;) {
 
 // -- styles --
 
-i = '100%';
 with (document.documentElement.style) {
 	display = 'table';
-	width = height = i;
+	width = height = '100%';
 	background = '#222';
 }
 with (b.style) {
 	display = 'table-cell';
-	width = height = i;
+	width = height = '100%';
 	verticalAlign = 'middle';
 	textAlign = 'center';
 	fontFamily = 'sans-serif';
