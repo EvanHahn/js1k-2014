@@ -68,7 +68,8 @@ for (i = 8; i --;) {
 	for (j = 8; j --;) {
 
 		// make a <td>
-		(t = document.createElement('td')).f = n[i];
+		t = document.createElement('td');
+		t.f = n[i];
 		t.width = t.height = 64;
 		t.o = Math.random() < .2;
 		t.style.transition = 'background-color .2s ease';
