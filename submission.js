@@ -85,6 +85,8 @@ for (i = 8; i --;) {
 
 }
 
+// b.innerHTML += '<button onclick="R()">new song</button>';
+
 // -- styles --
 
 with (document.documentElement.style) {
@@ -115,20 +117,18 @@ setInterval(function() {
 
 	for (i = 64; i --;) {
 
-		t = r[i];
-
 		if ((i % 8) == b) { // it's the current beat for this one
-			if (t.o) {
-				P(t.f);
-				t.style.background = '#3b3';
+			if (r[i].o) {
+				P(r[i].f);
+				r[i].style.background = '#3b3';
 			} else {
-				t.style.background = '#020';
+				r[i].style.background = '#020';
 			}
 		} else {
-			if (t.o) {
-				t.style.background = '#fff';
+			if (r[i].o) {
+				r[i].style.background = '#fff';
 			} else {
-				t.style.background = '#000';
+				r[i].style.background = '#000';
 			}
 		}
 
@@ -136,16 +136,10 @@ setInterval(function() {
 
 }, 500);
 
-// -- parse location.hash --
+// -- reset stuff --
 
-if (location.hash.length < 2) {
+(function R() {
 	for (i = 64; i --;) {
-		location.hash += (Math.random() > .2) ? 0 : 1;
+		r[i].o = Math.random() < .3;
 	}
-}
-
-for (i in location.hash) {
-	if (r[i - 1]) {
-		r[i - 1].o = parseInt(location.hash[i]);
-	}
-}
+})();
